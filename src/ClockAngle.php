@@ -5,10 +5,10 @@
             $hoursOriginAngle = $hours * 30 + ($minutes * .5);
             $minutesOriginAngle = $minutes * 6;
 
-            if ($hoursOriginAngle < $minutesOriginAngle) {
-                return  $minutesOriginAngle - $hoursOriginAngle;
+            if (abs($hoursOriginAngle - $minutesOriginAngle) > 180) {
+                return 360 - abs($hoursOriginAngle - $minutesOriginAngle);
             }
-            return $hoursOriginAngle - $minutesOriginAngle;
+            return abs($hoursOriginAngle - $minutesOriginAngle);
         }
 
     }
